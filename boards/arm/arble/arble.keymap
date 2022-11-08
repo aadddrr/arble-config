@@ -36,14 +36,14 @@
     raise {
         // --------------------------------------------------------------------------------------------------------------
         // |  INS  |     |     |     |     |     |     |     |     |     |     |     |     |     |     |
-        // |  HOME  |     |C_BRI_DN|C_BRI_UP| BT 0 | BT 1 | BT 2 |     |     |     |     |     |     |     |
+        // |  HOME  |     |C_BRI_DN|C_BRI_UP| BT 0 | BT 1 | BT 2 |     |     |     |     |     |     |TOG 3|
         // |  END |     |C_VOL_DN|C_VOL_UP|C_MUTE|     |     |     |     |     |     |     |     |     |
         // |       |     |C_PREV|C_NEXT|C_PP|     |     |     |     |     |     |     |     |     |
         // |       |     |     |                            RGB TOG                        |     |     | DEL |     |
         // ---------------------------------------------------------------------------------------------------------------
       bindings = <
         &kp INS   &kp F1   &kp F2   &kp F3   &kp F4    &kp F5   &kp F6    &kp F7   &kp F8    &kp F9   &kp F10   &kp F11  &kp F12   &trans   &trans  &trans
-        &kp HOME  &trans   &kp C_BRI_DN    &kp C_BRI_UP   &bt BT_SEL 0    &bt BT_SEL 1   &bt BT_SEL 2    &trans   &out OUT_USB      &trans   &trans    &trans   &kp UP   &trans   &trans
+        &kp HOME  &trans   &kp C_BRI_DN    &kp C_BRI_UP   &bt BT_SEL 0    &bt BT_SEL 1   &bt BT_SEL 2    &trans   &out OUT_USB      &trans   &trans    &trans   &kp UP   &trans   &tog 3
         &kp END  &trans   &kp C_VOL_DN  &kp C_VOL_UP &kp C_MUTE &trans    &trans   &trans  &trans &trans   &trans   &kp LEFT   &kp RIGHT    &rgb_ug RGB_TOG 
                       &trans   &kp C_PREV    &kp C_NEXT   &kp C_PP    &trans   &out OUT_BLE    &trans   &trans    &trans   &trans    &trans    &kp DOWN  &trans   &trans
                       &trans   &trans    &rgb_ug RGB_TOG    &trans   &trans    &trans   &trans
@@ -64,6 +64,16 @@
         &kp C_BRI_DN  &trans   &kp LEFT  &kp DOWN &kp RIGHT &trans    &trans   &kp LEFT  &kp DOWN &kp UP   &kp RIGHT   &kp LEFT   &kp RIGHT    &rgb_ug RGB_TOG 
                       &trans   &trans    &trans   &trans    &trans   &out OUT_BLE    &trans   &trans    &trans   &trans    &trans    &kp DOWN  &trans   &trans
                       &bt BT_CLR   &trans    &rgb_ug RGB_TOG    &trans   &trans    &trans   &trans 
+      >;
+    };
+    
+    lock_layer {
+      bindings = <
+        &none    &none   &none   &none   &none    &none   &none    &none   &none    &none   &none   &none  &none   &none   &none  &none
+        &none  &none   &none    &none   &none    &none   &none    &none   &none      &none   &none    &none   &none   &none   &trans
+        &none  &none   &none  &none  &none  &none    &none   &none  &none  &none   &none   &none   &none    &none
+                      &none   &none    &none   &none    &none   &none    &none   &none    &none   &none    &none    &none  &none   &trans
+                      &none   &none    &none    &none   &none    &none   &none 
       >;
     };
   };
